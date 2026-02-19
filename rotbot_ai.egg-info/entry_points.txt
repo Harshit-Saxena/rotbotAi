@@ -1,0 +1,2 @@
+[console_scripts]
+rotbot = rotbot.__main__:main
