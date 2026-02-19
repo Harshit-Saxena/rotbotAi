@@ -1,12 +1,22 @@
 """rotbot status — show system status."""
 
 import asyncio
+from pathlib import Path
 
 from rich.console import Console
 from rich.table import Table
 from rich.panel import Panel
 
 from rotbot.core.config import load_config, get_config_path, get_rotbot_dir
+
+
+def _friendly_path(p: Path) -> str:
+    """Show ~/.rotbot/... instead of full absolute path for privacy."""
+    try:
+        rel = p.relative_to(Path.home())
+        return f"~/{rel.as_posix()}"
+    except ValueError:
+        return p.name
 from rotbot.core.session import SessionManager
 from rotbot.core.rag import RAGStore
 
@@ -20,8 +30,8 @@ async def run_status():
     console.print(Panel.fit("[bold cyan]rotbot status[/bold cyan]", border_style="cyan"))
 
     # Config
-    console.print(f"\nConfig: {get_config_path()}")
-    console.print(f"Data dir: {get_rotbot_dir()}")
+    console.print(f"\nConfig: {_friendly_path(get_config_path())}")
+    console.print(f"Data dir: {_friendly_path(get_rotbot_dir())}")
 
     # Provider
     defaults = config.get("agents", {}).get("defaults", {})

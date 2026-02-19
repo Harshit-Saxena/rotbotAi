@@ -22,11 +22,38 @@ rotbot is an ultra-lightweight AI agent framework inspired by [nanobot](https://
 
 ```bash
 pip install rotbot-ai
+```
 
-# Or from source
-git clone https://github.com/rotbot-ai/rotbot.git
-cd rotbot-ai
-pip install -e .
+**From source:**
+
+```bash
+git clone https://github.com/Harshit-Saxena/rotbotAi.git
+cd rotbotAi
+pip install .
+```
+
+**Linux/Debian (virtual environment):**
+
+Modern Linux distros (Debian 12+, Ubuntu 23.04+) require a virtual environment:
+
+```bash
+git clone https://github.com/Harshit-Saxena/rotbotAi.git
+cd rotbotAi
+
+python3 -m venv .venv
+source .venv/bin/activate
+pip install .
+```
+
+> **Note:** You'll need to activate the venv each time you open a new terminal:
+> ```bash
+> cd rotbotAi && source .venv/bin/activate
+> ```
+
+**Using pipx (installs in isolated environment automatically):**
+
+```bash
+pipx install rotbot-ai
 ```
 
 ### 2. Setup

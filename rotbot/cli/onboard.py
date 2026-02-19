@@ -16,6 +16,15 @@ from rotbot.core.config import (
 console = Console()
 
 
+def _friendly_path(p: Path) -> str:
+    """Show ~/.rotbot/... instead of full absolute path for privacy."""
+    try:
+        rel = p.relative_to(Path.home())
+        return f"~/{rel.as_posix()}"
+    except ValueError:
+        return p.name
+
+
 async def run_onboard():
     """Interactive setup wizard for first-time users."""
     console.print(Panel.fit(
@@ -95,7 +104,7 @@ async def run_onboard():
     ]
     for d in dirs:
         d.mkdir(parents=True, exist_ok=True)
-        console.print(f"  Created {d}")
+        console.print(f"  Created {_friendly_path(d)}")
 
     # Create workspace files
     soul_path = get_workspace_dir() / "SOUL.md"
@@ -119,13 +128,13 @@ async def run_onboard():
 
     # Save config
     save_config(config)
-    console.print(f"\n  Config saved to {config_path}")
+    console.print(f"\n  Config saved to {_friendly_path(config_path)}")
 
     # Done
     console.print(Panel.fit(
         "[bold green]Setup complete![/bold green]\n\n"
-        f"Config: {config_path}\n"
-        f"Workspace: {get_workspace_dir()}\n\n"
+        f"Config: {_friendly_path(config_path)}\n"
+        f"Workspace: {_friendly_path(get_workspace_dir())}\n\n"
         "Quick start:\n"
         "  [cyan]rotbot agent[/cyan]      — Chat in terminal\n"
         "  [cyan]rotbot gateway[/cyan]    — Start all channels\n"

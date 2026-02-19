@@ -2,10 +2,10 @@ Metadata-Version: 2.4
 Name: rotbot-ai
 Version: 0.1.0
 Summary: rotbot - the open agent framework for every platform
-Author: rotbot contributors
+Author: Harshit Saxena
 License: MIT
-Project-URL: Homepage, https://github.com/rotbot-ai/rotbot
-Project-URL: Repository, https://github.com/rotbot-ai/rotbot
+Project-URL: Homepage, https://github.com/Harshit-Saxena/rotbotAi
+Project-URL: Repository, https://github.com/Harshit-Saxena/rotbotAi
 Keywords: ai,agent,chatbot,llm,ollama,discord,telegram,signal
 Classifier: Development Status :: 3 - Alpha
 Classifier: Intended Audience :: Developers
@@ -73,8 +73,8 @@ rotbot is an ultra-lightweight AI agent framework inspired by [nanobot](https://
 pip install rotbot-ai
 
 # Or from source
-git clone https://github.com/rotbot-ai/rotbot.git
-cd rotbot-ai
+git clone https://github.com/Harshit-Saxena/rotbotAi.git
+cd rotbotAi
 pip install -e .
 ```
 

@@ -10,7 +10,7 @@ readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.10"
 authors = [
-    {name = "rotbot contributors"},
+    {name = "Harshit Saxena"},
 ]
 keywords = ["ai", "agent", "chatbot", "llm", "ollama", "discord", "telegram", "signal"]
 classifiers = [
@@ -51,8 +51,8 @@ dev = ["pytest>=7.0", "pytest-asyncio>=0.21.0"]
 rotbot = "rotbot.__main__:main"
 
 [project.urls]
-Homepage = "https://github.com/rotbot-ai/rotbot"
-Repository = "https://github.com/rotbot-ai/rotbot"
+Homepage = "https://github.com/Harshit-Saxena/rotbotAi"
+Repository = "https://github.com/Harshit-Saxena/rotbotAi"
 
 [tool.setuptools.packages.find]
 include = ["rotbot*"]
